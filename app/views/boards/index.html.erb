@@ -1,0 +1,13 @@
+<div class="container" data-controller"hello">
+  <h1 data-hello-target="output">
+  <% (1..@number).each_slice(2) do |row| %>
+    <div class="row">
+      <div class="col bg-blue"><span class="number"><%= row[0] %></span></div>
+      <% if row[1] %>
+        <div class="col bg-blue"><span class="number"><%= row[1] %></span></div>
+      <% else %>
+        <div class="col"></div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
