@@ -3,8 +3,8 @@
     <% cards.each do |row| %>
       <div class="column">
         <div data-action="click->board#click" class="col">
-          <div class="card-front bg-blue"><span class="number"><%= row[-1] + 1 %></span></div>
-          <div class="card-answer bg-blue">
+          <div class="card-front bg-card"><span class="number"><%= row[-1] + 1 %></span></div>
+          <div class="card-answer bg-card-b">
             <div class="answer"><%= row[0][0] %></div>
             <div class="number_of_answers"><%= row[0][1] %></div>
           </div>
