@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+    <tr>
+        <td>Answer</td>
+        <td></td>
+    </tr>
+    </thead>
+    <tbody>
+  <% @answers.each do |answer| %>
+    <tr>
+        <td><%= answer.title %></td>
+        <td><%= button_to 'delete', answer_path(answer), method: :delete, class: "btn btn-light" %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

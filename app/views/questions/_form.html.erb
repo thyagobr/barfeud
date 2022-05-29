@@ -1,0 +1,19 @@
+<%= form_with model: @question, class: "form" do |f| %>
+<div class="mb-3">
+  <%= f.label :title, "Question", class: "form-label" %>
+  <%= f.text_field :title, class: "form-control" %>
+</div>
+
+<div class="mb-3">
+  <%= f.fields_for :answers_attributes do |answer_f| %>
+    <%= answer_f.label :title, "Answer", class: "form-label" %>
+    <%= answer_f.text_field :title, class: "form-control" %>
+  <% end %>
+  </div>
+
+<div class="d-grid">
+  <%= f.submit class: "btn btn-block btn-warning" %>
+  </div>
+<% end %>
+
+<%= render partial: "answers_list" if @answers.size > 0 %>
