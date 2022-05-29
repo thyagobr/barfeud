@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   height: 100%;
 }
@@ -20,6 +25,8 @@ body {
 
 .col {
   margin: 5px;
+  height: 30px;
+  width: 100px;
   padding: 7px;
   text-align: center;
   border-radius: 6px;
@@ -29,6 +36,33 @@ body {
 
 .col_rotate {
   transform: rotateX(180deg);
+}
+
+.col_unrotate {
+  transform: rotateX(0deg) !important;
+}
+
+.card-front {
+  position: absolute;
+  width: 300px;
+  height: 30px;
+  padding: 7px;
+  transition: transform 0.5s;
+  backface-visibility: hidden
+}
+
+.card-answer {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-grow: 1;
+  width: 300px;
+  height: 30px;
+  padding: 7px;
+  transition: transform 0.5s;
+  transform: rotateX(180deg);
+  backface-visibility: hidden
 }
 
 .bg-blue {

@@ -1,10 +1,21 @@
-<div class="container" data-controller"hello">
-  <h1 data-hello-target="output">
-  <% (1..@number).each_slice(2) do |row| %>
+<div class="container" data-controller="board">
+  <% @answers.each_with_index.each_slice(2) do |row| %>
     <div class="row">
-      <div class="col bg-blue"><span class="number"><%= row[0] %></span></div>
-      <% if row[1] %>
-        <div class="col bg-blue"><span class="number"><%= row[1] %></span></div>
+      <div data-action="click->board#click" class="col">
+        <div class="card-front bg-blue"><span class="number"><%= row[0][-1] + 1 %></span></div>
+        <div class="card-answer bg-blue">
+          <div class="answer"><%= row[0][0][0] %></div>
+          <div class="number_of_answers"><%= row[0][0][1] %></div>
+        </div>
+      </div>
+      <% if row.size > 1 %>
+        <div data-action="click->board#click" class="col">
+          <div class="card-front bg-blue"><span class="number"><%= row[1][-1] + 1 %></span></div>
+          <div class="card-answer bg-blue">
+            <div class="answer"><%= row[1][0][0] %></div>
+            <div class="number_of_answers"><%= row[1][0][1] %></div>
+          </div>
+        </div>
       <% else %>
         <div class="col"></div>
       <% end %>
