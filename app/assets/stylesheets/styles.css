@@ -5,17 +5,24 @@
 
 html {
   height: 100%;
+  font-family: 'Concert One', cursive;
 }
 
 body {
   height: 100%;
 }
 
+div {
+  font-size: 16pt;
+}
+
 .container {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+  height: 38vh;
+  background: #000000b8;
 }
 
 .column {
@@ -45,21 +52,24 @@ body {
 
 .card-front {
   position: absolute;
-  width: 300px;
-  height: 30px;
+  width: 91%;
+  height: 49px;
   padding: 7px;
   transition: transform 0.5s;
-  backface-visibility: hidden
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
 }
 
 .card-answer {
   position: absolute;
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-items: center;
   flex-grow: 1;
-  width: 300px;
-  height: 30px;
+  width: 91%;
+  height: 49px;
   padding: 7px;
   transition: transform 0.5s;
   transform: rotateX(180deg);
@@ -71,8 +81,20 @@ body {
   box-shadow: 2px 2px 2px 333;
 }
 
+.bg-card {
+  background-color: #be5fab;
+}
+
+
+.bg-card-b {
+  background-color: #60a567;
+  border-radius: 10px;
+}
+
 .number {
-  border: 2px solid #bbb;
-  padding: 3px 8px;
+  border: 3px solid #f2ff00;
+  padding: 8px 17px;
   border-radius: 50%;
+  font-size: 16pt;
+  color: yellow;
 }
